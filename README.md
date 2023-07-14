@@ -70,19 +70,19 @@ To run the Django web app locally with Docker, follow these steps:
     Create database for our project:
 
     ```
-    docker exec -it "blogging-website-be-db-1" psql -U admin -c "CREATE DATABASE <database_name>"
+    docker exec -it "blogging-website-be-db-1" psql -U admin -c "CREATE DATABASE blog_db;"
     ```
 
     Migrate the database:
 
     ```
-    docker exec -it "blogging-website-be-app-1" python manage.py migrate
+    docker exec -it "blogging-website-be-web-1" python manage.py migrate
     ```
 
     Auto create superuser and some initializations for OAuth2 with Google:
 
     ```
-    docker exec -it "blogging-website-be-app-1" python init.py
+    docker exec -it "blogging-website-be-web-1" python init.py
     ```
 
     Then restart the containers by running the previous command again and it will work.
